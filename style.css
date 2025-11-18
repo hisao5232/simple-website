@@ -1,0 +1,146 @@
+/* 全体設定 */
+body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* -------------------------
+     ヘッダー
+------------------------- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #303030;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ハンバーガーボタン */
+.menu-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* PCでは非表示 */
+}
+
+/* ナビメニュー（PC用） */
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* -------------------------
+     タイトル
+------------------------- */
+.hero-title h1 {
+    margin: 30px 0 20px 0;
+    font-size: 3rem;
+    color: #333;
+}
+
+/* -------------------------
+   ヒーローイメージ
+------------------------- */
+.hero-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* -------------------------
+      紹介文
+------------------------- */
+.intro {
+    margin: 30px 20px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* -------------------------
+      リンク
+------------------------- */
+.links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #0070f3;
+    font-weight: bold;
+}
+
+.links .icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* -------------------------
+      フッター
+------------------------- */
+footer {
+    background-color: #f2f2f2;
+    padding: 15px 0;
+    margin-top: 50px;
+    color: #666;
+}
+
+/* =========================================
+      スマホ用（レスポンシブ対応）
+========================================= */
+@media (max-width: 768px) {
+
+    /* タイトルを小さくする */
+    .hero-title h1 {
+        font-size: 2rem;
+    }
+
+    /* メニューをハンバーガーに変更 */
+    .menu-btn {
+        display: block;
+    }
+
+    .navbar {
+        display: none; /* 初期状態は非表示 */
+        width: 100%;
+        background-color: #0070f3;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 15px;
+    }
+
+    /* リンクを縦並びに */
+    .links {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* ハンバーガーメニュー展開時の表示 */
+.navbar.show {
+    display: block;
+}
