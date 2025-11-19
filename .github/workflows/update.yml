@@ -5,6 +5,9 @@ on:
     - cron: "0 19 * * *"   # 日本時間4:00 = UTC 19:00
   workflow_dispatch:
 
+permissions:
+  contents: write   # ← これが必要（Push 権限付与）
+
 jobs:
   update:
     runs-on: ubuntu-latest
