@@ -43,6 +43,14 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease; /* 変化を滑らかに */
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    color: #333; /* 文字色を変える */
+    background-color: white; /* 背景を白くする */
 }
 
 /* -------------------------
@@ -116,14 +124,19 @@ footer {
     }
 
     .navbar {
-        display: none; 
-        width: 100%; /* 横幅いっぱいにしてロゴの下へ */
-        order: 3;    /* 順番を最後に指定 */
-        text-align: center;
+        /* display: none; は削除します */
+        width: 100%;
+        background-color: #0070f3;
+        overflow: hidden;         /* はみ出た分を隠す */
+        max-height: 0;            /* 高さを0にして隠す */
+        opacity: 0;               /* 透明にする */
+        transition: all 0.4s ease; /* 0.4秒かけて変化させる */
     }
 
     .navbar.show {
-        display: block;
+        max-height: 500px;        /* 十分な高さを指定（スライド効果） */
+        opacity: 1;               /* 不透明にする（フェード効果） */
+        padding: 10px 0;
     }
     
     /* タイトルを小さくする */
@@ -145,8 +158,15 @@ footer {
     /* リンクを縦並びに */
     .links {
         flex-direction: column;
+        align-items: center; /* これで子要素のaタグが中央に寄ります */
         gap: 20px;
     }
+
+    .links a {
+        justify-content: center; /* aタグの中のアイコンと文字を中央に */
+        width: fit-content;      /* 横幅をコンテンツに合わせる */
+    }
+    
 }
 
 /* ハンバーガーメニュー展開時の表示 */
