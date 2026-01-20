@@ -109,8 +109,23 @@ footer {
 /* =========================================
       スマホ用（レスポンシブ対応）
 ========================================= */
+/* style.css の @media (max-width: 768px) の中に追加 */
 @media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap; /* 要素が横幅を超えたら折り返す設定 */
+    }
 
+    .navbar {
+        display: none; 
+        width: 100%; /* 横幅いっぱいにしてロゴの下へ */
+        order: 3;    /* 順番を最後に指定 */
+        text-align: center;
+    }
+
+    .navbar.show {
+        display: block;
+    }
+    
     /* タイトルを小さくする */
     .hero-title h1 {
         font-size: 2rem;
@@ -119,12 +134,6 @@ footer {
     /* メニューをハンバーガーに変更 */
     .menu-btn {
         display: block;
-    }
-
-    .navbar {
-        display: none; /* 初期状態は非表示 */
-        width: 100%;
-        background-color: #0070f3;
     }
 
     .navbar ul {
