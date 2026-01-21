@@ -69,6 +69,18 @@ body {
     width: 100%;
     max-height: 400px;
     object-fit: cover;
+    opacity: 0; /* 最初は透明にしておく */
+    transform: translateY(20px); /* 少し下にずらしておく */
+    animation: imageFadeIn 1s ease-out forwards; /* 1秒かけて実行 */
+    animation-delay: 0.5s; /* ページの読み込みから0.5秒遅れて開始 */
+}
+
+/* アニメーションの定義 */
+@keyframes imageFadeIn {
+    to {
+        opacity: 1; /* 不透明にする */
+        transform: translateY(0); /* 元の位置に戻る */
+    }
 }
 
 /* -------------------------
